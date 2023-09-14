@@ -3,9 +3,10 @@ const router=express.Router()
 const Pen=require("../models/pens")
 
 // Index Route
-router.get('/', (request, response) => {
+router.get('/', async (request, response) => {
+    const foundEntries = await Pen.find()
     response.render("index.ejs",{
-        pens: Pen
+        pens: foundEntries
     })
  })
 
@@ -15,8 +16,12 @@ router.get("/new", (request, response)=>{
 })
 
 // Create Route
-router.post("/", (request,response)=>{
-    response.redirect(request.body)
+router.post("/", async (request,response)=>{
+    try{const newEntry = await Pen.create(request.body)
+    response.redirect("/pens")
+    }catch(err){
+        console.log(err)
+    }
 })
 
 module.exports=router

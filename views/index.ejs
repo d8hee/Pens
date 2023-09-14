@@ -10,20 +10,23 @@
 
     <div class="main">
 
-        <!--New Post button-->
+        <a href="/pens/new">
+            Create a new entry
+        </a>
         
 
         <div class="postsDiv">
-        <ul>
-            <!--Edit button-->
-            <!--Delete button-->
-
-            <%  for(let i=0; i<pens.length; i++){   %>
-                <li>
-                    <%= pens[i].entry  %>
-                </li>
-            <%  }   %>
-        </ul>
+            <h1>Showing all entries</h1>
+            <ul>
+                <% for(let i in pens){ %>
+                    <li>
+                        <%= pens[i].entryTitle %>
+                    </li>
+                    <li>
+                        <%= pens[i].entry %>
+                    </li>
+                <% } %>
+            </ul>
         </div>
 
     </div>
