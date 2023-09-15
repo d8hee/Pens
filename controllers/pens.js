@@ -42,13 +42,16 @@ router.get("/:id/edit", async (request, response) => {
 })
 
 // Update Route
-router.put("/:id", async (request,response) => {
+router.put("/:id", async (request, response) => {
     const updatedEntry = await Pen.findByIdAndUpdate(request.params.id, request.body, {new:true})
     console.log(updatedEntry)
     response.redirect(`/pens/${request.params.id}`)
 })
 
 // Delete Route
-
+router.delete("/:id", async (request, response) => {
+    const entryToDel = await Pen.findByIdAndDelete(request.params.id)
+    response.redirect("/pens")
+})
 
 module.exports = router
