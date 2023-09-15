@@ -7,6 +7,22 @@
 </head>
 <body>
 
+    <div class="main">
+        <div>
+            <%= pens.entryTitle %> <br>
+            <%= pens.entry %>
+        </div>
+
+        <a href="/pens/<%= pens.id %>/edit">
+            <button>Edit Post</button>
+        </a>
+        <!-- delete button -->
+        <form action="/pens/<%= pens.id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete Post">
+        </form>
+
+        <a href="/pens">Back Home</a>
+    </div>
 
 </body>
 </html>

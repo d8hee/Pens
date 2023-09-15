@@ -19,12 +19,28 @@
             <h1>Showing all entries</h1>
             <ul>
                 <% for(let i in pens){ %>
-                    <li>
-                        <%= pens[i].entryTitle %>
-                    </li>
-                    <li>
-                        <%= pens[i].entry %>
-                    </li>
+                    <div>
+                        <a href="/pens/<%=pens[i].id%>">
+                            <button>
+                                View Post
+                            </button>
+                            </a>
+                        <!-- edit button -->
+                        <a href="/pens/<%= pens[i].id %>/edit">
+                            <button>Edit Post</button>
+                        </a>
+                        <!-- delete button -->
+                        <form action="/pens/<%= pens[i].id%>?_method=DELETE" method="POST">
+                            <input type="submit" value="Delete Post">
+                        </form>
+
+                        <li>
+                            <%= pens[i].entryTitle %>
+                        </li>
+                        <li>
+                            <%= pens[i].entry %>
+                        </li>
+                    </div>
                 <% } %>
             </ul>
         </div>

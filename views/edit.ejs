@@ -6,6 +6,14 @@
     <title>Edit Your Post</title>
 </head>
 <body>
-    
+    <h1>Edit Your Entry</h1>
+    <form action="/pens/<%=pens.id%>?_method=PUT" method="POST">
+        <input type="text" name="entryTitle" value="<%=pens.entryTitle%>">
+        <input type="text" name="entry" value="<%=pens.entry%>">
+
+        <input type="submit" value="Update Your Entry">
+    </form>
+
+    <a href="/pens">Back Home</a>
 </body>
 </html>
