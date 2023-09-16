@@ -20,7 +20,7 @@ const mongoURI = process.env.MONGO_URI
 mongoose.connect(mongoURI)
 const db = mongoose.connection
 // optional create status messages to check mongo connection 
-db.on('error', (err) => { console.log('ERROR: ', err) })
+// db.on('error', (err) => { console.log('ERROR: ', err) })
 db.on('connected', () => { console.log('mongo connected') })
 db.on('disconnected', () => { console.log('mongo disconnected') })
 
@@ -28,6 +28,7 @@ db.on('disconnected', () => { console.log('mongo disconnected') })
 const pensController = require("./controllers/pens")
 app.use("/pens", pensController)
 
+app.use(express.static("public"))
 
 app.listen(PORT, () => {
     console.log(`Server is listening on PORT: ${PORT}`)

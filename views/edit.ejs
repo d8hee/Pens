@@ -1,19 +1,31 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Your Post</title>
-</head>
+
+    <style>
+        .main{background-color: pink;}
+    </style> 
+</head> -->
+
+<%- include("../public/partials/header.ejs") %>
+
 <body>
+
+    <div class="main">
+
     <h1>Edit Your Entry</h1>
-    <form action="/pens/<%=pens.id%>?_method=PUT" method="POST">
-        <input type="text" name="entryTitle" value="<%=pens.entryTitle%>">
-        <input type="text" name="entry" value="<%=pens.entry%>">
+    <form action="/pens/<%=entry.id%>?_method=PUT" method="POST">
+        <input type="text" name="entryTitle" value="<%=entry.entryTitle%>">
+        <input type="text" name="entry" value="<%=entry.entry%>">
 
         <input type="submit" value="Update Your Entry">
     </form>
 
     <a href="/pens">Back Home</a>
+
+    </div>
 </body>
 </html>
