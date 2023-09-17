@@ -6,25 +6,33 @@
     <title>View Post</title>
 </head> -->
 
-    <%- include("../public/partials/header.ejs") %>
+<%- include("../public/partials/header.ejs") %>
 
-<body>    
-    <div class="main">
-        <div>
-            <%= pens.entryTitle %> <br>
-            <%= pens.entry %>
+    <body>
+        <div class="showMain">
+
+            <div class="showPost">
+                <h1>
+                    <%= pens.entryTitle %>
+                </h1>
+                <h4>
+                <%= pens.entry %>
+                </h4>
+
+            <!-- delete button -->
+            <form action="/pens/<%= pens.id %>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete Post">
+            </form>
+            <!-- edit button -->
+            <a href="/pens/<%= pens.id %>/edit">
+                <button>Edit Post</button>
+            </a>
+
+            </div>
+
+            <a href="/pens">Back Home</a>
         </div>
 
-        <a href="/pens/<%= pens.id %>/edit">
-            <button>Edit Post</button>
-        </a>
-        <!-- delete button -->
-        <form action="/pens/<%= pens.id %>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete Post">
-        </form>
+    </body>
 
-        <a href="/pens">Back Home</a>
-    </div>
-
-</body>
-</html>
+    </html>

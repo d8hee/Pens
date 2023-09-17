@@ -17,7 +17,6 @@ router.get("/new", (request, response) => {
 
 // Create Route
 router.post("/", async (request, response) => {
-    console.log("POSTING")
     try {
         const newEntry = await Pen.create(request.body)
         response.redirect("/pens")
@@ -26,24 +25,21 @@ router.post("/", async (request, response) => {
     }
 })
 
-// Edit Route
-router.get("/:id/edit", async (request, response) => {
-    const foundEntry = await Pen.findById(request.params.id)
-    console.log(foundEntry)
-    response.render("edit.ejs", {
-        entry: foundEntry
-    })
-})
-
 // Show Route
 router.get("/:id", async (request,response) => {
-    console.log("SHOWING")
     const oneEntry = await Pen.findById(request.params.id)
     response.render("show.ejs",{
         pens: oneEntry
     })
 })
 
+// Edit Route
+router.get("/:id/edit", async (request, response) => {
+    const foundEntry = await Pen.findById(request.params.id)
+    response.render("edit.ejs", {
+        entry: foundEntry
+    })
+})
 
 // Update Route
 router.put("/:id", async (request, response) => {

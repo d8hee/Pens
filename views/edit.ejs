@@ -12,20 +12,25 @@
 
 <%- include("../public/partials/header.ejs") %>
 
-<body>
+    <body>
 
-    <div class="main">
+        <div class="editMain">
 
-    <h1>Edit Your Entry</h1>
-    <form action="/pens/<%=entry.id%>?_method=PUT" method="POST">
-        <input type="text" name="entryTitle" value="<%=entry.entryTitle%>">
-        <input type="text" name="entry" value="<%=entry.entry%>">
+            <h1>Edit Your Entry</h1>
 
-        <input type="submit" value="Update Your Entry">
-    </form>
+            <div class="editFormDiv">
+            <form action="/pens/<%=entry.id%>?_method=PUT" method="POST">
+                <input type="text" name="entryTitle" value="<%=entry.entryTitle%>"> <br>
+                <input type="text" name="entry" value="<%=entry.entry%>" id="entryText"> <br>
 
-    <a href="/pens">Back Home</a>
+                <input type="submit" value="Update Your Entry">
+            </form>
 
-    </div>
-</body>
-</html>
+            </div>
+
+            <a href="/pens">Back Home</a>
+
+        </div>
+    </body>
+
+    </html>

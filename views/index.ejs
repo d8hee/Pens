@@ -9,49 +9,52 @@
 
 <%- include("../public/partials/header.ejs") %>
 
-<body>
+    <body>
+        <div class="main">
 
-    <h1>Hello World</h1>
+            <button class="newEntryBtn">
+                <a href="/pens/new">
+                    Create a new entry
+                </a>
+            </button>
 
-    <div class="main">
-
-        <a href="/pens/new">
-            Create a new entry
-        </a>
-        
-
-        <div class="postsDiv">
-            <h1>Showing all entries</h1>
-            <ul>
-                <% for(let i in pens){ %>
-                    <div>
-                        <a href="/pens/<%=pens[i].id%>">
-                            <button>
-                                View Post
-                            </button>
+            <% for(let i in pens){ %>
+                <!-- Single Post Div -->
+                <div class="postDiv">
+                    <ul>
+                        <!-- Single Post Navbar -->
+                        <nav class="singleNav">
+                            <a href="/pens/<%=pens[i].id%>">
+                                <button>
+                                    View Post
+                                </button>
                             </a>
-                        <!-- edit button -->
-                        <a href="/pens/<%= pens[i].id %>/edit">
-                            <button>Edit Post</button>
-                        </a>
-                        <!-- delete button -->
-                        <form action="/pens/<%= pens[i].id%>?_method=DELETE" method="POST">
-                            <input type="submit" value="Delete Post">
-                        </form>
+                            <!-- edit button -->
+                            <a href="/pens/<%= pens[i].id %>/edit">
+                                <button>Edit Post</button>
+                            </a>
+                            <!-- delete button -->
+                            <!-- <form action="/pens/<%= pens[i].id%>?_method=DELETE" method="POST">
+                                <input type="submit" value="Delete Post">
+                                </form> -->
+                        </nav>
 
-                        <li>
+
+                        <!-- Single Post Content -->
+                        <h2>
                             <%= pens[i].entryTitle %>
-                        </li>
-                        <li>
+                        </h2>
+                        <h4>
                             <%= pens[i].entry %>
-                        </li>
-                    </div>
+                        </h4>
+                    </ul>
+                </div>
                 <% } %>
-            </ul>
+
+
         </div>
 
-    </div>
 
+    </body>
 
-</body>
-</html>
+    </html>

@@ -1,5 +1,69 @@
+body{
+    background-color: #fefcfa;
+}
+
+/* This is the container for main page
+Flexbox, cross axis */
 .main{
-    background-color: orange;
-    height: 800px;
-    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    /* height: 1020px;
+    width: 480px; */
+    border: 1px solid gray;
+
+}
+
+.newEntryBtn{
+    background-color: transparent;
+    border: gray dotted;
+    border-radius: 45px;
+    padding: 3em 3em;
+    margin: 2em 2em;
+}
+
+/* This is a grid item of the container for main page*/
+.postDiv{
+    height: 480px;
+    width: 450px;
+    background-color:#f3ebe2;
+    border-radius: 45px;
+    color: #29251d;
+}
+
+h4{
+    line-height: 1.5;
+}
+
+/* Show page div */
+.showMain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.showPost{
+    height: 480px;
+    width: 450px;
+    background-color:#f3ebe2;
+    border-radius: 45px;
+    color: #29251d;
+}
+
+.editMain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.editFormDiv{
+    line-height: 2em;
+}
+
+#entryText{
+
+    height: 100px;
+    width: 300px;
 }
