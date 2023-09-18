@@ -12,12 +12,15 @@
         <div class="showMain">
 
             <div class="showPost">
-                <h1>
-                    <%= pens.entryTitle %>
-                </h1>
-                <h4>
-                <%= pens.entry %>
-                </h4>
+                <div class="showText">
+                    <h1>
+                        <%= pens.entryTitle %>
+                    </h1>
+                    <h4>
+                    <%= pens.entry %>
+                    </h4>
+                </div>
+            </div>
 
             <!-- delete button -->
             <form action="/pens/<%= pens.id %>?_method=DELETE" method="POST">
@@ -27,8 +30,6 @@
             <a href="/pens/<%= pens.id %>/edit">
                 <button>Edit Post</button>
             </a>
-
-            </div>
 
             <a href="/pens">Back Home</a>
         </div>

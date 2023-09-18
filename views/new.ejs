@@ -16,10 +16,10 @@
                 <form action="/pens" method="POST">
                     <!-- Name: <input type="text" name="name" value="Your name"> <br> -->
                     Title: <br>
-                    <input type="text" name="entryTitle" value="Title"><br>
+                    <input type="text" name="entryTitle" value="Title" class="entryTitle"><br>
                     <!-- Your Post: <input type="text" name="entry" value="What are you thinking about?"><br> -->
                     Your Post: <br>
-                    <textarea type="text" name="entry" id="newEntryText">What are you thinking about?</textarea><br>
+                    <textarea type="text" name="entry" id="newEntryText" maxlength="420">What are you thinking about? (420 words max)</textarea><br>
                     Image: <br>
                     <input type="text" name="img" value="Attach an image link"><br>
                     <input type="submit" value="Create your entry" method="POST">

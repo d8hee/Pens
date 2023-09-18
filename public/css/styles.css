@@ -1,9 +1,22 @@
 body{
     background-color: #fefcfa;
     font-family: 'Inclusive Sans', sans-serif;
+    line-height: 1.5;
 }
 label{
-    font-size: 1.5rem;
+    font-size: 1rem;
+}
+textarea{
+    font-family: 'Inclusive Sans', sans-serif;
+    line-height: 1.5;
+    font-size: 1rem;
+    text-align: justify;
+    height: 17rem;
+    width: 20rem;
+    padding: 10px;
+}
+h2{
+    text-align: center;
 }
 /* This is the container for main page
 Flexbox, cross axis */
@@ -12,8 +25,6 @@ Flexbox, cross axis */
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    /* height: 1020px;
-    width: 480px; */
 }
 .newEntryBtn{
     background-color: transparent;
@@ -25,15 +36,19 @@ Flexbox, cross axis */
 }
 /* This is a grid item of the container for main page*/
 .postDiv{
-    height: 480px;
-    width: 450px;
+    height: 430px;
+    width: 390px;
+    max-width: 100%;
     background-color:#f3ebe2;
     border-radius: 45px;
     color: #29251d;
 }
-
+.singlePost{
+    padding: 20px 20px;
+}
 h4{
     line-height: 1.5;
+    text-align: justify;
 }
 
 /* -------------Show page------------- */
@@ -42,45 +57,41 @@ h4{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 20px;
 }
 .showPost{
-    height: 480px;
-    width: 450px;
+    height: 430px;
+    width: 390px;
+    max-width: 100%;
     background-color:#f3ebe2;
     border-radius: 45px;
     color: #29251d;
 }
+.showText{
+    padding: 20px 20px;
+}
+
 
 /* -------------Edit page------------- */
 .editMain{
     display: flex;
     flex-direction: column;
-    align-items: center;    
-    /* justify-content: center; */
-    background-color: pink;
-}
-.editFormDiv{
-    border-radius: 45px;
+    align-items: center;
+    max-width: 100%;
+    gap: 20px;
     color: #29251d;
-    width: 20rem;
-    background-color: brown;
-
 }
 #formAlign{
     text-align: left;
-    padding-left: 10px;
+    height: 430px;
+    width: 390px;
+    max-width: 100%;
+    margin-left: 10px;
 }
 .entryTitle{
     font-size: 1rem;
-}
-.entryText{
-    /* 100percent of the screen */
-    /* aka maxwidth: biggest I want it to be */
-    height: 20rem;
     width: 20rem;
-    margin: 10px;
-    font-size: 1rem;
-    text-align: justify;
+    padding: 0px 10px;
 }
 
 /* -------------New page------------- */
@@ -89,15 +100,12 @@ h4{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: pink;
+
 }
+/* see entryTitle on edit section styling */
 .newEntryDiv{
     line-height: 2rem;
     color: #29251d;
     width: 20rem;
-    background-color: brown;
-}
-#newEntryText{
-    height: 20rem;
-    width: 20rem;
+
 }

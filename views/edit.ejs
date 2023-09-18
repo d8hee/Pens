@@ -13,12 +13,12 @@
 <%- include("../public/partials/header.ejs") %>
 
     <body>
+        <h2>Edit Your Entry</h2>
 
         <div class="editMain">
+<!-- 
+            <div class="editFormDiv"> -->
 
-            <h1>Edit Your Entry</h1>
-
-            <div class="editFormDiv">
                 <div id="formAlign">
                 <form action="/pens/<%=entry.id%>?_method=PUT" method="POST">
                     <label for="entryTitle">Title</label> <br>
@@ -26,12 +26,13 @@
 
                     <label for="entryText">Edit Your Post</label> <br>
                     <!-- <input type="text" name="entry" value="<%=entry.entry%>" class="entryText" id="entryText"> <br> -->
-                    <textarea name="entry" class="entryText" id="entryText"><%=entry.entry%></textarea> <br>
+                    <textarea name="entry" class="entryText" id="entryText" maxlength="420"><%=entry.entry%></textarea> <br>
 
-                    <input type="submit" value="Update Your Entry">
+                    <input type="submit" value="Update">
                 </form>
                 </div>
-            </div>
+                
+            <!-- </div> -->
 
             <a href="/pens">Back Home</a>
 

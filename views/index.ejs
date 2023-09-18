@@ -21,7 +21,7 @@
             <% for(let i in pens){ %>
                 <!-- Single Post Div -->
                 <div class="postDiv">
-                    <ul>
+                    <!-- <ul> -->
                         <!-- Single Post Navbar -->
                         <nav class="singleNav">
                             <a href="/pens/<%=pens[i].id%>">
@@ -41,13 +41,15 @@
 
 
                         <!-- Single Post Content -->
-                        <h2>
-                            <%= pens[i].entryTitle %>
-                        </h2>
-                        <h4>
-                            <%= pens[i].entry %>
-                        </h4>
-                    </ul>
+                        <div class="singlePost">
+                            <h2>
+                                <%= pens[i].entryTitle %>
+                            </h2>
+                            <h4>
+                                <%= pens[i].entry %>
+                            </h4>
+                        </div>
+                    <!-- </ul> -->
                 </div>
                 <% } %>
 
