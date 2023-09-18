@@ -1,7 +1,10 @@
 body{
     background-color: #fefcfa;
+    font-family: 'Inclusive Sans', sans-serif;
 }
-
+label{
+    font-size: 1.5rem;
+}
 /* This is the container for main page
 Flexbox, cross axis */
 .main{
@@ -11,18 +14,15 @@ Flexbox, cross axis */
     gap: 30px;
     /* height: 1020px;
     width: 480px; */
-    border: 1px solid gray;
-
 }
-
 .newEntryBtn{
     background-color: transparent;
     border: gray dotted;
     border-radius: 45px;
     padding: 3em 3em;
     margin: 2em 2em;
+    font-style: italic;
 }
-
 /* This is a grid item of the container for main page*/
 .postDiv{
     height: 480px;
@@ -36,14 +36,13 @@ h4{
     line-height: 1.5;
 }
 
-/* Show page div */
+/* -------------Show page------------- */
 .showMain{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-
 .showPost{
     height: 480px;
     width: 450px;
@@ -52,18 +51,53 @@ h4{
     color: #29251d;
 }
 
+/* -------------Edit page------------- */
 .editMain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    /* justify-content: center; */
+    background-color: pink;
+}
+.editFormDiv{
+    border-radius: 45px;
+    color: #29251d;
+    width: 20rem;
+    background-color: brown;
+
+}
+#formAlign{
+    text-align: left;
+    padding-left: 10px;
+}
+.entryTitle{
+    font-size: 1rem;
+}
+.entryText{
+    /* 100percent of the screen */
+    /* aka maxwidth: biggest I want it to be */
+    height: 20rem;
+    width: 20rem;
+    margin: 10px;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+/* -------------New page------------- */
+.newMain{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: pink;
 }
-.editFormDiv{
-    line-height: 2em;
+.newEntryDiv{
+    line-height: 2rem;
+    color: #29251d;
+    width: 20rem;
+    background-color: brown;
 }
-
-#entryText{
-
-    height: 100px;
-    width: 300px;
+#newEntryText{
+    height: 20rem;
+    width: 20rem;
 }

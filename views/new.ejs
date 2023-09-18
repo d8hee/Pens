@@ -9,16 +9,22 @@
 
     <body>
 
-        <div class="main">
+        <div class="newMain">
             <h1>Create a New Post</h1>
-            <form action="/pens" method="POST">
-                <!-- Name: <input type="text" name="name" value="Your name"> <br> -->
-                Title: <input type="text" name="entryTitle" value="Title"><br>
-                Your Post: <input type="text" name="entry" value="What are you thinking about?"><br>
-                Image: <input type="text" name="img" value="Attach an image link"><br>
-                <input type="submit" value="Create your entry" method="POST">
-            </form>
 
+            <div class="newEntryDiv">
+                <form action="/pens" method="POST">
+                    <!-- Name: <input type="text" name="name" value="Your name"> <br> -->
+                    Title: <br>
+                    <input type="text" name="entryTitle" value="Title"><br>
+                    <!-- Your Post: <input type="text" name="entry" value="What are you thinking about?"><br> -->
+                    Your Post: <br>
+                    <textarea type="text" name="entry" id="newEntryText">What are you thinking about?</textarea><br>
+                    Image: <br>
+                    <input type="text" name="img" value="Attach an image link"><br>
+                    <input type="submit" value="Create your entry" method="POST">
+                </form>
+            </div>
             <a href="/pens">Back Home</a>
         </div>
 

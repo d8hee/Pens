@@ -19,13 +19,18 @@
             <h1>Edit Your Entry</h1>
 
             <div class="editFormDiv">
-            <form action="/pens/<%=entry.id%>?_method=PUT" method="POST">
-                <input type="text" name="entryTitle" value="<%=entry.entryTitle%>"> <br>
-                <input type="text" name="entry" value="<%=entry.entry%>" id="entryText"> <br>
+                <div id="formAlign">
+                <form action="/pens/<%=entry.id%>?_method=PUT" method="POST">
+                    <label for="entryTitle">Title</label> <br>
+                    <input type="text" name="entryTitle" value="<%=entry.entryTitle%>" class="entryTitle" id="entryTitle"> <br>
 
-                <input type="submit" value="Update Your Entry">
-            </form>
+                    <label for="entryText">Edit Your Post</label> <br>
+                    <!-- <input type="text" name="entry" value="<%=entry.entry%>" class="entryText" id="entryText"> <br> -->
+                    <textarea name="entry" class="entryText" id="entryText"><%=entry.entry%></textarea> <br>
 
+                    <input type="submit" value="Update Your Entry">
+                </form>
+                </div>
             </div>
 
             <a href="/pens">Back Home</a>
