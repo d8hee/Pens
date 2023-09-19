@@ -21,27 +21,26 @@
             <% for(let i in pens){ %>
                 <!-- Single Post Div -->
                 <div class="postDiv">
-                    <!-- <ul> -->
-                        <!-- Single Post Navbar -->
-                        <nav class="singleNav">
-                            <a href="/pens/<%=pens[i].id%>">
-                                <button>
-                                    View Post
-                                </button>
-                            </a>
-                            <!-- edit button -->
-                            <a href="/pens/<%= pens[i].id %>/edit">
-                                <button>Edit Post</button>
-                            </a>
-                            <!-- delete button -->
-                            <!-- <form action="/pens/<%= pens[i].id%>?_method=DELETE" method="POST">
-                                <input type="submit" value="Delete Post">
-                                </form> -->
-                        </nav>
+                        <!-- Dropdown Menu Button -->
+                        <div class="dropNav">
+                            <button onclick="dropNavFn(<%=i%>)" class="dropNavBtn" id="dropNavItem<%=i%>">
+                                Dropdown
+                            </button>
 
+                            <div class="navItems" id="navItems<%=i%>">
+                                <a href="/pens/<%=pens[i].id%>">
+                                        View Post
+                                </a>
+                                <!-- edit button -->
+                                <a href="/pens/<%= pens[i].id %>/edit">
+                                        Edit Post
+                                </a>
+                            </div>
+                        </div>
 
                         <!-- Single Post Content -->
                         <div class="singlePost">
+
                             <h2>
                                 <%= pens[i].entryTitle %>
                             </h2>
@@ -49,14 +48,10 @@
                                 <%= pens[i].entry %>
                             </h4>
                         </div>
-                    <!-- </ul> -->
                 </div>
                 <% } %>
 
-
         </div>
-
-
     </body>
 
     </html>

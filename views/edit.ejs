@@ -21,10 +21,10 @@
 
                 <div id="formAlign">
                 <form action="/pens/<%=entry.id%>?_method=PUT" method="POST">
-                    <label for="entryTitle">Title</label> <br>
+                    <label for="entryTitle">Title:</label> <br>
                     <input type="text" name="entryTitle" value="<%=entry.entryTitle%>" class="entryTitle" id="entryTitle"> <br>
 
-                    <label for="entryText">Edit Your Post</label> <br>
+                    <label for="entryText">Edit Your Post(420 characters max):</label> <br>
                     <!-- <input type="text" name="entry" value="<%=entry.entry%>" class="entryText" id="entryText"> <br> -->
                     <textarea name="entry" class="entryText" id="entryText" maxlength="420"><%=entry.entry%></textarea> <br>
 
