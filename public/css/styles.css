@@ -19,6 +19,10 @@ textarea{
 h2{
     text-align: center;
 }
+h4{
+    line-height: 1.5;
+    text-align: justify;
+}
 /* This is the container for main page
 Flexbox, cross axis */
 .main{
@@ -45,25 +49,26 @@ Flexbox, cross axis */
     color: #29251d;
 }
 .singlePost{
-    z-index: 2;
+    z-index: 1;
     padding: 20px 20px;
-}
-h4{
-    line-height: 1.5;
-    text-align: justify;
-}
-.dropNavBtn{
-    background-color: pink;
+    margin-top: 2rem;
 }
 .dropNav{
     display: inline-block;
+    position: absolute;
+    z-index: 2;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    font-size: 0.8em;
+    text-align: center;
+}
+.dropNavBtn{
+    background-color: #f3ebe2;
+    height: 3em;
+    width: 3em;
 }
 .navItems{
     display: none;
-}
-.navItems a{
-    display: block;
-    z-index: 6;
 }
 .show {display:block;}
 /* -------------Show page------------- */

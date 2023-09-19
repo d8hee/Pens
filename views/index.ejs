@@ -23,17 +23,16 @@
                 <div class="postDiv">
                         <!-- Dropdown Menu Button -->
                         <div class="dropNav">
-                            <button onclick="dropNavFn(<%=i%>)" class="dropNavBtn" id="dropNavItem<%=i%>">
-                                Dropdown
+                            <button onclick="dropNavFn(<%=i%>)" class="dropNavBtn" id="dropNavItem<%=i%>">. . .
                             </button>
 
                             <div class="navItems" id="navItems<%=i%>">
                                 <a href="/pens/<%=pens[i].id%>">
-                                        View Post
-                                </a>
+                                        View
+                                </a><br>
                                 <!-- edit button -->
                                 <a href="/pens/<%= pens[i].id %>/edit">
-                                        Edit Post
+                                        Edit
                                 </a>
                             </div>
                         </div>
