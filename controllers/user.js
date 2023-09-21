@@ -9,6 +9,7 @@ router.get("/", (request, response) => {
     response.render("newUser.ejs")
 })
 
+
 // New User Sign Up Form POST
 router.post("/", async (request, response) => {
     try {
@@ -37,6 +38,7 @@ router.post("/login", async (request, response) => {
             const isAMatch = bcrypt.compareSync(request.body.password, foundUser.password)
             if (isAMatch) {
                 request.session.currentUser = foundUser
+                console.log(request.session.currentUser.username)
                 response.redirect("/pens")
             }
         }
@@ -58,12 +60,25 @@ router.delete("/logout", (request, response) => {
 })
 
 
-// // User Profile Page Route
-// router.get("/profile", (request,response)=>{
-//     response.render("userView.ejs")
-// })
+// Custom auth middleware
+// if currentUser has a session, show the profilepg
+// if not, redirect to login page
+const isAuthenticated = (request, response, next) => {
+    if (request.session.currentUser) {
+      return next()
+    } else {
+      response.redirect("/user/login")
+    }
+  }
 
+router.get("/profile",isAuthenticated, (request,response)=>{
 
-
+    console.log(request.session)
+    response.render("profilepg.ejs",{
+        user: request.session.currentUser
+    })
+})
 
 module.exports = router
+
+
