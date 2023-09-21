@@ -11,10 +11,12 @@
 
     <body>
         <div class="main">
-            <form action="/user/logout?_method=DELETE" method="POST">
-                <input type="submit" value="Log Out"/>
-            </form>
-
+            <nav>
+                <form action="/user/logout?_method=DELETE" method="POST">
+                    <input type="submit" value="Log Out"/>
+                </form>
+                <a href="/user/profile">My Profile</a>
+            </nav>
             <button class="newEntryBtn">
                 <a href="/pens/new">
                     Create a new entry
