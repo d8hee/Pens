@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const Pen = require("../models/pens")
+const User = require("../models/pensuser")
 
 // Index Route
 router.get('/', async (request, response) => {
@@ -26,9 +27,9 @@ router.post("/", async (request, response) => {
 })
 
 // Show Route
-router.get("/:id", async (request,response) => {
+router.get("/:id", async (request, response) => {
     const oneEntry = await Pen.findById(request.params.id)
-    response.render("show.ejs",{
+    response.render("show.ejs", {
         pens: oneEntry
     })
 })
@@ -43,7 +44,7 @@ router.get("/:id/edit", async (request, response) => {
 
 // Update Route
 router.put("/:id", async (request, response) => {
-    const updatedEntry = await Pen.findByIdAndUpdate(request.params.id, request.body, {new:true})
+    const updatedEntry = await Pen.findByIdAndUpdate(request.params.id, request.body, { new: true })
     console.log(updatedEntry)
     response.redirect(`/pens/${request.params.id}`)
 })
@@ -53,5 +54,10 @@ router.delete("/:id", async (request, response) => {
     const entryToDel = await Pen.findByIdAndDelete(request.params.id)
     response.redirect("/pens")
 })
+
+
+
+
+
 
 module.exports = router

@@ -23,6 +23,9 @@ h4{
     line-height: 1.5;
     text-align: justify;
 }
+.dateItem{
+    text-align: right;
+}
 /* This is the container for main page
 Flexbox, cross axis */
 .main{
