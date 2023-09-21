@@ -24,7 +24,27 @@ router.post("/", async (request,response) => {
     }
 })
 
+
 // Login User Route
+router.get("/login", (request, response)=>{
+    response.render("login.ejs")
+})
+// Login User POST 
+router.post("/login", async (request, response) => {
+    try{
+        const foundUser = await User.findOne({username:request.body.username})
+        if(foundUser){
+            const isAMatch = bcrypt.compareSync(request.body.password, foundUser.password)
+            if(isAMatch){
+                request.session.currentUser = foundUser
+                response.redirect("/pens")
+            }
+        }
+    } catch (err) {
+        console.log(err)
+        response.status(500).send("Please try again")
+    }
+})
 
 // Logout User Route
 
