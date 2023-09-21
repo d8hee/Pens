@@ -5,20 +5,20 @@ const Pen = require("../models/pens")
 const User = require("../models/pensuser")
 
 //New User Sign Up Form
-router.get("/", (request,response)=>{
+router.get("/", (request, response) => {
     response.render("newUser.ejs")
 })
 
 // New User Sign Up Form POST
-router.post("/", async (request,response) => {
-    try{
+router.post("/", async (request, response) => {
+    try {
         request.body.password = bcrypt.hashSync(request.body.password, bcrypt.genSaltSync(10))
-    const newUser = await User.create(request.body)
-    request.session.currentUser = newUser
-    console.log(newUser)
-    response.redirect("/pens")
+        const newUser = await User.create(request.body)
+        request.session.currentUser = newUser
+        console.log(newUser)
+        response.redirect("/pens")
     }
-    catch (err){
+    catch (err) {
         console.log(err)
         response.status(500).send("error, please try again")
     }
@@ -26,16 +26,16 @@ router.post("/", async (request,response) => {
 
 
 // Login User Route
-router.get("/login", (request, response)=>{
+router.get("/login", (request, response) => {
     response.render("login.ejs")
 })
 // Login User POST 
 router.post("/login", async (request, response) => {
-    try{
-        const foundUser = await User.findOne({username:request.body.username})
-        if(foundUser){
+    try {
+        const foundUser = await User.findOne({ username: request.body.username })
+        if (foundUser) {
             const isAMatch = bcrypt.compareSync(request.body.password, foundUser.password)
-            if(isAMatch){
+            if (isAMatch) {
                 request.session.currentUser = foundUser
                 response.redirect("/pens")
             }
@@ -47,6 +47,16 @@ router.post("/login", async (request, response) => {
 })
 
 // Logout User Route
+router.delete("/logout", (request, response) => {
+    request.session.destroy(err => {
+        if (err) {
+            console.log(err)
+        } else {
+            response.redirect("/user/login")
+        }
+    })
+})
+
 
 // // User Profile Page Route
 // router.get("/profile", (request,response)=>{
