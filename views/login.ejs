@@ -1,14 +1,15 @@
 <%- include("../public/partials/header.ejs") %>
 
 <body>
-    <h1>Log In Page</h1>
-    <form action="/user/login" method="POST">
-        <input type="text" placeholder="Username" name="username">
-        <input type="password" placeholder="Password" name="password">
-        <input type="submit" value="Login">
+    <div class="main">
+    <h1>Log In</h1>
+    <form class="loginForm" action="/user/login" method="POST">
+        <input type="text" placeholder="Username" name="username" class="loginInput"> <br>
+        <input type="password" placeholder="Password" name="password" class="loginInput"><br>
+        <input type="submit" value="Login" class="loginBtn">
     </form>
 
-    <a href="/pens">Back Home</a>
-
+    <a href="/pens">Home</a>
+    </div>
 </body>
 </html>

@@ -1,12 +1,17 @@
 const mongoose = require("mongoose")
+const User = require("../models/pensuser")
+
 const penSchema = new mongoose.Schema(
     {
-        name: { type: String },
-        email: { type: String },
+        // name: String,
         //date:
         entryTitle: { type: String, required: true },
         entry: { type: String, required: true },
-        img: { type: String }
+        author: { 
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+            // required: true
+        }
     },
     {
         timestamps: true

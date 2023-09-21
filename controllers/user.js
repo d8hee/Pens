@@ -16,7 +16,7 @@ router.post("/", async (request, response) => {
         request.body.password = bcrypt.hashSync(request.body.password, bcrypt.genSaltSync(10))
         const newUser = await User.create(request.body)
         request.session.currentUser = newUser
-        console.log(newUser)
+        // console.log(newUser)
         response.redirect("/pens")
     }
     catch (err) {
@@ -38,7 +38,7 @@ router.post("/login", async (request, response) => {
             const isAMatch = bcrypt.compareSync(request.body.password, foundUser.password)
             if (isAMatch) {
                 request.session.currentUser = foundUser
-                console.log(request.session.currentUser.username)
+                // console.log(request.session.currentUser.username)
                 response.redirect("/pens")
             }
         }
@@ -72,8 +72,7 @@ const isAuthenticated = (request, response, next) => {
   }
 
 router.get("/profile",isAuthenticated, (request,response)=>{
-
-    console.log(request.session)
+    // console.log(request.session.currentUser)
     response.render("profilepg.ejs",{
         user: request.session.currentUser
     })

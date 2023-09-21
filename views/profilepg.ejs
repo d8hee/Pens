@@ -1,12 +1,22 @@
 <%- include("../public/partials/header.ejs") %>
 
 <body>
-    <p>
-        <%= user.username %>
-    </p>
-    <p>Posts</p>
+    <div class="main">
+        <a href="/pens"> Home </a>
+    <h1>
+       Hi <%= user.username %> !
+    </h1>
 
+    <button class="newEntryBtn">
+        <a href="/pens/new">
+            Create a new entry
+        </a>
+    </button>
 
-    <a href="/pens">Back Home</a>
+        <div class="singlePost">
+            
+        </div>
+
+    </div>
 </body>
 </html>

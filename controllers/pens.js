@@ -2,6 +2,13 @@ const express = require("express")
 const router = express.Router()
 const Pen = require("../models/pens")
 const User = require("../models/pensuser")
+const isAuthenticated = (request, response, next) => {
+    if (request.session.currentUser) {
+      return next()
+    } else {
+      response.redirect("/user/login")
+    }
+  }
 
 // Index Route
 router.get('/', async (request, response) => {
@@ -12,13 +19,16 @@ router.get('/', async (request, response) => {
 })
 
 // New Route
-router.get("/new", (request, response) => {
-    response.render("new.ejs")
+router.get("/new", isAuthenticated, (request, response) => {
+    response.render("new.ejs",{
+        user: request.session.currentUser
+    })
 })
 
 // Create Route
 router.post("/", async (request, response) => {
     try {
+        request.body.author = request.session.currentUser._id
         const newEntry = await Pen.create(request.body)
         response.redirect("/pens")
     } catch (err) {

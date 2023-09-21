@@ -26,6 +26,7 @@ h4{
 .dateItem{
     text-align: right;
 }
+
 /* This is the container for main page
 Flexbox, cross axis */
 .main{
@@ -127,3 +128,19 @@ Flexbox, cross axis */
     color: #29251d;
 }
 /* see entryTitle on edit section styling */
+
+/* -------------Login page------------- */
+.loginBtn{
+    border-radius: 5px;
+    background-color: #FD885A;
+    width: 5rem;
+    margin: 1rem;
+}
+.loginForm{
+    text-align: center;
+}
+.loginInput{
+    margin: 0.5rem;
+    padding: 0.4rem;
+}
+

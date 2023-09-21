@@ -35,38 +35,39 @@ app.use("/user", userController)
 
 app.use("/pens", pensController)
 
-// puts "something" on the session
-app.get("/any", (request, response) => {
-    request.session.anyProperty = "something"
-    response.redirect("/pens")
-})
+// // puts "something" on the session
+// app.get("/any", (request, response) => {
+//     request.session.anyProperty = "something"
+//     response.redirect("/pens")
+// })
 
-// matches if "something" exists on session 
-app.get("/retrieve", (request, response) => {
-    if (request.session.anyProperty === "something") {
-        console.log("MATCH!")
-    } else {
-        console.log("NOT a match!")
-    }
-    response.redirect("/pens")
-})
-//route to make changes on current session 
-app.get('/update', (request, response) => {
-    //any route will work
-    request.session.anyProperty = "not something"
-    response.redirect('/')
-})
+// // matches if "something" exists on session 
+// app.get("/retrieve", (request, response) => {
+//     if (request.session.anyProperty === "something") {
+//         console.log("MATCH!")
+//     } else {
+//         console.log("NOT a match!")
+//     }
+//     response.redirect("/pens")
+// })
 
-// destroy session
-app.get("/destroy", ()=>{
-    request.session.destroy(err => {
-        if(err){
-            //do something if destroying session fails
-        } else {
-            response.redirect("/pens")
-        }
-    })
-})
+// //route to make changes on current session 
+// app.get('/update', (request, response) => {
+//     //any route will work
+//     request.session.anyProperty = "not something"
+//     response.redirect('/')
+// })
+
+// // destroy session
+// app.get("/destroy", ()=>{
+//     request.session.destroy(err => {
+//         if(err){
+//             //do something if destroying session fails
+//         } else {
+//             response.redirect("/pens")
+//         }
+//     })
+// })
 
 const mongoose = require('mongoose')
 const mongoURI = process.env.MONGO_URI
