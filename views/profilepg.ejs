@@ -16,6 +16,21 @@
 
             <% for(i in posts){ %>
                 <div class="postDiv">
+                        <!-- Dropdown Menu Button -->
+                        <div class="dropNav">
+                            <button onclick="dropNavFn(<%=i%>)" class="dropNavBtn" id="dropNavItem<%=i%>">. . .
+                            </button>
+
+                            <div class="navItems" id="navItems<%=i%>">
+                                <a href="/pens/<%=posts[i].id%>">
+                                        View
+                                </a><br>
+                                <!-- edit button -->
+                                <a href="/pens/<%= posts[i].id %>/edit">
+                                        Edit
+                                </a>
+                            </div>
+                        </div>
                     <div class="singlePost">
                         <h2>
                             <%= posts[i].entryTitle %>

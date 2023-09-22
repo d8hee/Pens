@@ -18,19 +18,19 @@ textarea{
     /* border: 1px solid orange; */
     resize: none;
     border: none;
-    box-shadow: 0.5px 0px 5px #FD885A;
-    box-shadow: inset 0.5px 0px 5px #FD885A;
+    box-shadow: inset 0.5px 0px 4px #FD885A;
     border-radius: 15px;
 }
 input{
     box-shadow: 0px 0px 5px #FD885A;
     border: none;
     border-radius: 10px;
-    box-shadow: 0.5px 0px 5px #FD885A;
+
     box-shadow: inset 0.3px 0px 4px #FD885A;
 }
 h1{
     margin: 0;
+    text-align: center;
 }
 h2{
     text-align: center;
@@ -41,6 +41,10 @@ h4{
 }
 .dateItem{
     text-align: right;
+    font-size: 0.5em;
+    position: absolute;
+    bottom: 3em;
+    right: 4em;
 }
 a{
     color:#FD885A;
@@ -59,8 +63,8 @@ Flexbox, cross axis */
     border: gray dotted;
     border-radius: 45px;
     padding: 3em 3em;
-    /* margin: 2em 2em; */
     font-style: italic;
+    width: 390px;
 }
 /* This is a grid item of the container for main page*/
 .postDiv{
@@ -70,6 +74,7 @@ Flexbox, cross axis */
     background-color:#f3ebe2;
     border-radius: 45px;
     color: #29251d;
+    position: relative;
 }
 .singlePost{
     z-index: 1;
@@ -93,6 +98,7 @@ Flexbox, cross axis */
 }
 .navItems{
     display: none;
+    background-color: #f3ebe2;
 }
 .show {display:block;}
 /* -------------Show page------------- */
