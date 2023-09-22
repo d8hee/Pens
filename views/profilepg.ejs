@@ -13,23 +13,25 @@
         </a>
     </button>
 
-        <div class="postDiv">
-            <% for(i in posts){ %>
-                <div class="singlePost">
-                    <h2>
-                        <%= posts[i].entryTitle %>
-                    </h2>
-                    <h4>
-                        <%= posts[i].entry %>
-                    </h4>
 
-                    <p class="dateItem">
-                        <% let postDate = posts[i].createdAt %>
-                        <%= postDate.toDateString() %>
-                    </p>
+            <% for(i in posts){ %>
+                <div class="postDiv">
+                    <div class="singlePost">
+                        <h2>
+                            <%= posts[i].entryTitle %>
+                        </h2>
+                        <h4>
+                            <%= posts[i].entry %>
+                        </h4>
+
+                        <p class="dateItem">
+                            <% let postDate = posts[i].createdAt %>
+                            <%= postDate.toDateString() %>
+                        </p>
+                    </div>
                 </div>
             <% } %>
-        </div>
+
     </div>
 </body>
 </html>
