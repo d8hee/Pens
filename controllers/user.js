@@ -71,11 +71,17 @@ const isAuthenticated = (request, response, next) => {
     }
   }
 
-router.get("/profile",isAuthenticated, (request,response)=>{
-    // console.log(request.session.currentUser)
+router.get("/profile",isAuthenticated, async (request,response)=>{
+    let userID = request.session.currentUser._id
+    // console.log(userID)
+    const postsByUser = await Pen.find({author: userID})
+    // console.log(request.session.currentUser._id)
+    console.log(postsByUser)
     response.render("profilepg.ejs",{
-        user: request.session.currentUser
+        user: request.session.currentUser,
+        posts: postsByUser
     })
+
 })
 
 module.exports = router

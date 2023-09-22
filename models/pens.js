@@ -18,16 +18,7 @@ const penSchema = new mongoose.Schema(
     }
 )
 
-// const penSchema = new mongoose.Schema(
-//     {
-//     entryTitle: {type: String, required: true},
-//     entry: { type: String, required: true},
-//     private: false
-//     },
-//     {
-//         timestamps: true
-//     }
-// )
+// each Post only has 1 author. Not an array
 
 const Pen = mongoose.model("Pen", penSchema)
 

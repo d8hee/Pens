@@ -16,6 +16,9 @@ textarea{
     width: 20rem;
     padding: 10px;
 }
+h1{
+    margin: 0;
+}
 h2{
     text-align: center;
 }
@@ -40,7 +43,7 @@ Flexbox, cross axis */
     border: gray dotted;
     border-radius: 45px;
     padding: 3em 3em;
-    margin: 2em 2em;
+    /* margin: 2em 2em; */
     font-style: italic;
 }
 /* This is a grid item of the container for main page*/
@@ -127,6 +130,14 @@ Flexbox, cross axis */
     gap: 20px;
     color: #29251d;
 }
+.createBtn{
+    border-radius: 5px;
+    background-color: #FD885A;
+    width: 6rem;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
 /* see entryTitle on edit section styling */
 
 /* -------------Login page------------- */

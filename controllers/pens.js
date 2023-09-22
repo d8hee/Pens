@@ -30,9 +30,10 @@ router.post("/", async (request, response) => {
     try {
         request.body.author = request.session.currentUser._id
         const newEntry = await Pen.create(request.body)
+        // console.log(request.body)
         response.redirect("/pens")
     } catch (err) {
-        console.log(err)
+        console.log(err) 
     }
 })
 
