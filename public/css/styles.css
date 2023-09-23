@@ -70,7 +70,19 @@ Flexbox, cross axis */
 #homeTitle{
     font-family: 'Sniglet', cursive;
     font-size: 6rem;
+    /* background-image: linear-gradient(#e66465, #9198e5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimate 5s linear infinite alternate; */
 }
+/* @keyframes gradientAnimate {
+    from{
+        color: linear-gradient(#e66465, #9198e5);
+    }
+    to{
+        color: linear-gradient(#9198e5,#e66465);
+    }
+} */
 .postDiv{
     height: 430px;
     width: 390px;
