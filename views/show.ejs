@@ -17,21 +17,21 @@
                         <%= pens.entryTitle %>
                     </h1>
                     <h4>
-                    <%= pens.entry %>
+                        <%= pens.entry %>
                     </h4>
                 </div>
             </div>
 
             <!-- delete button -->
-            <form action="/pens/<%= pens.id %>?_method=DELETE" method="POST">
+            <form action="/pens/<%= pens.id %>?_method=DELETE" method="POST" id="delBtn">
                 <input type="submit" value="Delete Post">
             </form>
             <!-- edit button -->
             <a href="/pens/<%= pens.id %>/edit">
-                <button>Edit Post</button>
+Edit Post
             </a>
 
-            <a href="/pens">Back Home</a>
+            <a href="/pens">Home</a>
         </div>
 
     </body>

@@ -1,64 +1,37 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
-</head> -->
-
 <%- include("../public/partials/header.ejs") %>
 
     <body>
-        <h1>Pens</h1>
+        <h1 id="homeTitle">Pens</h1>
+
         <div class="main">
-            <nav>
-                <a href="/user/profile">My Profile</a>
+            <nav id="homeNav">
+                <a href="/user/profile" class="homeBtns">Profile</a>
+
                 <form action="/user/logout?_method=DELETE" method="POST">
-                    <input type="submit" value="Log Out" id="logoutBtn"/>
+                    <input type="submit" value="Log Out" class="homeBtns" />
                 </form>
             </nav>
-            <button class="newEntryBtn">
-                <a href="/pens/new">
-                    Create a new entry
-                </a>
-            </button>
-            
+
+            <a href="/pens/new" class="newEntryBtn">Create a new entry</a>
 
             <% for(let i in pens){ %>
                 <!-- Single Post Div -->
                 <div class="postDiv">
-<!-- 
-                        <div class="dropNav">
-                            <button onclick="dropNavFn(<%=i%>)" class="dropNavBtn" id="dropNavItem<%=i%>">. . .
-                            </button>
+                    <!-- Single Post Content -->
+                    <div class="singlePost">
 
-                            <div class="navItems" id="navItems<%=i%>">
-                                <a href="/pens/<%=pens[i].id%>">
-                                        View
-                                </a><br>
+                        <h2>
+                            <%= pens[i].entryTitle %>
+                        </h2>
+                        <h4>
+                            <%= pens[i].entry %>
+                        </h4>
 
-                                <a href="/pens/<%= pens[i].id %>/edit">
-                                        Edit
-                                </a>
-                            </div>
-                        </div> -->
-
-                        <!-- Single Post Content -->
-                        <div class="singlePost">
-
-                            <h2>
-                                <%= pens[i].entryTitle %>
-                            </h2>
-                            <h4>
-                                <%= pens[i].entry %>
-                            </h4>
-
-                            <div class="dateItem">
-                                <% let pensDate = pens[i].createdAt %>
+                        <div class="dateItem">
+                            <% let pensDate=pens[i].createdAt %>
                                 <%= pensDate.toDateString() %>
-                            </div>
                         </div>
+                    </div>
                 </div>
                 <% } %>
 

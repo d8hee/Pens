@@ -1,10 +1,4 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a New Post</title>
-</head> -->
+
 <%- include("../public/partials/header.ejs") %>
 
     <body>
@@ -16,11 +10,11 @@
                 <form action="/pens" method="POST">
 
                     <!-- <input type="text" name="_objectId" > -->
-                    <label for="entryTitle" class="newLabel">Title:</label> <br>
-                    <input type="text" name="entryTitle" value="Title" class="entryTitle"><br>
+                    <label for="newTitle" class="newLabel">Title:</label> <br>
+                    <input type="text" name="entryTitle" value="Title" class="entryTitle" id="newTitle"><br>
 
-                    <label for="newentryText" class="newLabel"> Your Post:</label> <br>
-                    <textarea type="text" name="entry" id="newEntryText" maxlength="420">What are you thinking about? (420 characters max)</textarea><br>
+                    <label for="newText" class="newLabel"> Your Post:</label> <br>
+                    <textarea type="text" name="entry" id="newText" maxlength="420">What are you thinking about? (420 characters max)</textarea><br>
                     <input type="submit" value="Post" method="POST" class="createBtn" >
                 </form>
             </div>

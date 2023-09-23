@@ -15,7 +15,6 @@ textarea{
     height: 17rem;
     width: 20rem;
     padding: 10px;
-    /* border: 1px solid orange; */
     resize: none;
     border: none;
     box-shadow: inset 0.5px 0px 4px #FD885A;
@@ -25,7 +24,6 @@ input{
     box-shadow: 0px 0px 5px #FD885A;
     border: none;
     border-radius: 10px;
-
     box-shadow: inset 0.3px 0px 4px #FD885A;
 }
 h1{
@@ -46,10 +44,6 @@ h4{
     bottom: 3em;
     right: 4em;
 }
-a{
-    color:#FD885A;
-}
-
 /* This is the container for main page
 Flexbox, cross axis */
 .main{
@@ -58,15 +52,25 @@ Flexbox, cross axis */
     align-items: center;
     gap: 30px;
 }
+
+.homeBtns{
+    background-color: #FD885A;
+}
 .newEntryBtn{
+    /* display: block; */
     background-color: transparent;
     border: gray dotted;
     border-radius: 45px;
     padding: 3em 3em;
     font-style: italic;
-    width: 390px;
+    /* width: 360px; */
+
 }
 /* This is a grid item of the container for main page*/
+#homeTitle{
+    font-family: 'Sniglet', cursive;
+    font-size: 6rem;
+}
 .postDiv{
     height: 430px;
     width: 390px;
@@ -153,9 +157,15 @@ Flexbox, cross axis */
 #updateDiv{
     text-align: center;
 }
-#logoutBtn{
-    background-color: orange;
+.editBtn{
+    border-radius: 5px;
+    background-color: #FD885A;
+    width: 6rem;
+    margin: 1rem;
+    padding: 0.5rem;
 }
+
+
 /* -------------New page------------- */
 .newMain{
     display: flex;
@@ -172,10 +182,15 @@ Flexbox, cross axis */
     margin: 1rem;
     padding: 0.5rem;
 }
-
 /* see entryTitle on edit section styling */
 
 /* -------------Login page------------- */
+.loginMain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
 .loginBtn{
     border-radius: 5px;
     background-color: #FD885A;
@@ -190,3 +205,32 @@ Flexbox, cross axis */
     padding: 0.4rem;
 }
 
+/* -------------Create Acct page------------- */
+.newUserMain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* -------------Profile page------------- */
+#profileTitle{
+    font-family: 'Sniglet', cursive;
+    font-size: 3rem;
+}
+
+@media screen and (min-width: 769px){
+    .main{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    #homeNav{
+        padding: 1.5rem;
+    }
+    #profileHome{
+        padding: 1.8rem;
+    }
+}

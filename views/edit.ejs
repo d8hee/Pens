@@ -20,12 +20,12 @@
                 <div id="formAlign">
 
                 <form action="/pens/<%=entry.id%>?_method=PUT" method="POST" class="formStyle">
-                    <label for="entryTitle">Title:</label> <br>
-                    <input type="text" name="entryTitle" value="<%=entry.entryTitle%>" class="entryTitle" id="entryTitle"> <br>
+                    <label for="postTitle">Title:</label> <br>
+                    <input type="text" name="entryTitle" value="<%=entry.entryTitle%>" class="entryTitle" id="postTitle"> <br>
 
-                    <label for="entryText">Edit Your Post(420 characters max):</label> <br>
+                    <label for="postText">Edit Your Post(420 characters max):</label> <br>
                     <!-- <input type="text" name="entry" value="<%=entry.entry%>" class="entryText" id="entryText"> <br> -->
-                    <textarea name="entry" class="entryText" id="entryText" maxlength="420"><%=entry.entry%></textarea> <br>
+                    <textarea name="entry" class="entryText" id="postText" maxlength="420"><%=entry.entry%></textarea> <br>
                     <div id="updateDiv">
                     <input type="submit" value="Update" id="updateBtn">
                     </div>
